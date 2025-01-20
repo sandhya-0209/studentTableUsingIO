@@ -1,35 +1,37 @@
 
-<table *ngIf="getstdArr.length > 0; else noStd"
- class="table table-bordered">
-   <thead>
-    <tr>
-      <th>Sr No.</th>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Email</th>
-      <th>Contact</th>
-      <th>Edit</th>
-      <th>Remove</th>
-    </tr>
-   </thead>
-   <tbody *ngFor="let std of getstdArr; let i=index">
-    <td>{{i+1}}</td>
-    <td>{{std.fname}}</td>
-    <td>{{std.lname}}</td>
-    <td>{{std.email}}</td>
-    <td>{{std.contact}}</td>
-    <td>
-      <button (click)="onEdit(std)" class="btn btn-sm btn-primary mr-2">
-            Edit
-      </button>
-    </td>
-    <td>
-        <button (click)="onRemove(std)" class="btn btn-sm btn-danger mr-2">
-              Remove
-        </button>
-      </td>
-   </tbody>
-</table>
+<div class="table-responsive">
+  <table *ngIf="getstdArr.length > 0; else noStd"
+    class="table table-bordered">
+      <thead>
+       <tr>
+         <th>Sr No.</th>
+         <th>First Name</th>
+         <th>Last Name</th>
+         <th>Email</th>
+         <th>Contact</th>
+         <th>Edit</th>
+         <th>Remove</th>
+       </tr>
+      </thead>
+      <tbody *ngFor="let std of getstdArr; let i=index">
+       <td>{{i+1}}</td>
+       <td>{{std.fname}}</td>
+       <td>{{std.lname}}</td>
+       <td>{{std.email}}</td>
+       <td>{{std.contact}}</td>
+       <td>
+         <button (click)="onEdit(std)" class="btn btn-sm btn-primary mr-2">
+               Edit
+         </button>
+       </td>
+       <td>
+           <button (click)="onRemove(std)" class="btn btn-sm btn-danger mr-2">
+                 Remove
+           </button>
+         </td>
+      </tbody>
+   </table>
+</div>
 <ng-template #noStd>
   <p class="alert alert-warning">
     No Student Available !!!
